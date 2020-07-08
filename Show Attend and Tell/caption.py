@@ -199,9 +199,5 @@ def sat_caption(image_path):
     	caption = caption + caption_array[i] + ' '
     caption = caption.strip()
 
-    # print('>>>>>>>>>>> ',caption)
     return caption
 
-
-# if __name__ == '__main__':
-# 	sat_caption()
