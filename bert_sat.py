@@ -12,7 +12,7 @@ from PIL import ImageTk,Image
 
 if __name__ == '__main__':
 
-	model = QA('/home/abc/SAT/MAIN/BERT/model')
+	model = QA('/complete_path_to_BERT_model_with_model_file_name/')
 
 	root=Tk()
 	root.geometry('750x750')
@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
 	def browsefunc():
 		global img_path
-		filename = filedialog.askopenfilename(initialdir = "/home/abc/SAT/MAIN/sat_final/test",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+		filename = filedialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
 		print('filename--------- ',filename)
 		img_path=filename
 		try:
