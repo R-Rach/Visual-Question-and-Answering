@@ -163,66 +163,10 @@ def visualize_att(image_path, seq, alphas, rev_word_map, smooth=True):
     image = image.resize([14 * 24, 14 * 24], Image.LANCZOS)
 
     words = [rev_word_map[ind] for ind in seq]
-    # print("---------> ",words)
-
-    # for t in range(len(words)):
-    #     if t > 50:
-    #         break
-    #     plt.subplot(np.ceil(len(words) / 5.), 5, t + 1)
-
-    #     plt.text(0, 1, '%s' % (words[t]), color='black', backgroundcolor='white', fontsize=12)
-    #     plt.imshow(image)
-    #     current_alpha = alphas[t, :]
-    #     if smooth:
-    #         alpha = skimage.transform.pyramid_expand(current_alpha.numpy(), upscale=24, sigma=8)
-    #     else:
-    #         alpha = skimage.transform.resize(current_alpha.numpy(), [14 * 24, 14 * 24])
-    #     if t == 0:
-    #         plt.imshow(alpha, alpha=0)
-    #     else:
-    #         plt.imshow(alpha, alpha=0.8)
-    #     plt.set_cmap(cm.Greys_r)
-    #     plt.axis('off')
-    # plt.show()
-
     return words
 
 
-# if __name__ == '__main__':
-#     parser = argparse.ArgumentParser(description='Show, Attend, and Tell - Tutorial - Generate Caption')
-
-#     parser.add_argument('--img', '-i', help='path to image')
-#     parser.add_argument('--model', '-m', help='path to model')
-#     parser.add_argument('--word_map', '-wm', help='path to word map JSON')
-#     parser.add_argument('--beam_size', '-b', default=5, type=int, help='beam size for beam search')
-#     parser.add_argument('--dont_smooth', dest='smooth', action='store_false', help='do not smooth alpha overlay')
-
-#     args = parser.parse_args()
-
-#     # Load model
-#     checkpoint = torch.load(args.model, map_location=str(device))
-#     decoder = checkpoint['decoder']
-#     decoder = decoder.to(device)
-#     decoder.eval()
-#     encoder = checkpoint['encoder']
-#     encoder = encoder.to(device)
-#     encoder.eval()
-
-#     # Load word map (word2ix)
-#     with open(args.word_map, 'r') as j:
-#         word_map = json.load(j)
-#     rev_word_map = {v: k for k, v in word_map.items()}  # ix2word
-
-#     # Encode, decode with attention and beam search
-#     seq, alphas = caption_image_beam_search(encoder, decoder, args.img, word_map, args.beam_size)
-#     alphas = torch.FloatTensor(alphas)
-
-#     # Visualize caption and attention of best sequence
-#     visualize_att(args.img, seq, alphas, rev_word_map, args.smooth)
-
-
 def sat_caption(image_path):
-    # image_path = '/home/abc/SAT/MAIN/sat_final/test/3.jpg'
     model_path = '/path_to/sat_model'
     word_map_path = '/path_to/wordmap.json'
     beam_size = 5
