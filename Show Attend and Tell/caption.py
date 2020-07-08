@@ -223,8 +223,8 @@ def visualize_att(image_path, seq, alphas, rev_word_map, smooth=True):
 
 def sat_caption(image_path):
     # image_path = '/home/abc/SAT/MAIN/sat_final/test/3.jpg'
-    model_path = '/home/abc/SAT/MAIN/sat_final/trained_model_SAT/sat_model'
-    word_map_path = '/home/abc/SAT/MAIN/sat_final/trained_model_SAT/wordmap.json'
+    model_path = '/path_to/sat_model'
+    word_map_path = '/path_to/wordmap.json'
     beam_size = 5
     smooth = True
 
