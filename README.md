@@ -9,7 +9,7 @@ SQuAD = https://www.kaggle.com/stanfordu/stanford-question-answering-dataset
 
 Dataset to train SAT:
 MSCOCO '14 = https://cocodataset.org/#download
-Directly download the [Training (13GB)](http://images.cocodataset.org/zips/train2014.zip) and [Validation (6GB)](http://images.cocodataset.org/zips/val2014.zip) images.
+Or directly download the [Training (13GB)](http://images.cocodataset.org/zips/train2014.zip) and [Validation (6GB)](http://images.cocodataset.org/zips/val2014.zip) images.
 
 Necessary steps before running:
 1. /SAT/caption.py: Add correct path to model files in line 170 and 171.
