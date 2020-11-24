@@ -13,7 +13,7 @@ Necessary steps before running:
 2. /bert_sat.py: Set complete path for BERT MODEL in line 17.
 
 Visual Question and Answering:  
-RUN bet_sat.py with python3. Browse image, put up a question and generate answer as show below.
+RUN bert_sat.py with python3. Browse image, put up a question and generate answer as show below.
 
 
 ![](./inference.png)
